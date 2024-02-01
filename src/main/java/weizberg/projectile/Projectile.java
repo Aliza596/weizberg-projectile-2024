@@ -28,8 +28,7 @@ public class Projectile {
     public double getApexTime() {
         //starting velocity in the y direction divided by gravity
         //velocity = velocity * sin(degress)
-        double velocityOriginal = velocity * Math.sin(radians);
-        return velocityOriginal / 9.8;
+        return (velocity * Math.sin(radians)) / 9.8;
     }
 
 
