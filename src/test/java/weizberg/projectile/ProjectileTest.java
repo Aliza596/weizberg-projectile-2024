@@ -50,7 +50,7 @@ public class ProjectileTest {
     }
 
     @Test
-    public void getPeakY(){
+    public void getPeakY() {
         //given
         Projectile projectile = new Projectile(31, 65);
 

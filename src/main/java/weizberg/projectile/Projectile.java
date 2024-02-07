@@ -21,8 +21,8 @@ public class Projectile {
     }
 
     public double getY() {
-        return Math.sin(radians) * velocity * seconds -
-                .5 * 9.8 * seconds * seconds;
+        return Math.sin(radians) * velocity * seconds
+                - .5 * 9.8 * seconds * seconds;
     }
 
     public double getApexTime() {
@@ -31,7 +31,7 @@ public class Projectile {
         return (velocity * Math.sin(radians)) / 9.8;
     }
 
-    public double getPeakY(){
+    public double getPeakY() {
         //Link where I found the formula: https://www.quora.com/How-do-I-find-the-height-of-a-projectile-with-initial-velocity-and-angle
         return (velocity * Math.sin(radians)) * (velocity * Math.sin(radians)) / (2 * 9.8);
     }
