@@ -32,6 +32,7 @@ public class Projectile {
     }
 
     public double getPeakY(){
+        //Link where I found the formula: https://www.quora.com/How-do-I-find-the-height-of-a-projectile-with-initial-velocity-and-angle
         return (velocity * Math.sin(radians)) * (velocity * Math.sin(radians)) / (2 * 9.8);
     }
 
