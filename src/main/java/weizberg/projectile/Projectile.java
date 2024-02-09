@@ -36,6 +36,5 @@ public class Projectile {
         return (velocity * Math.sin(radians)) * (velocity * Math.sin(radians)) / (2 * 9.8);
     }
 
-
 }
 
