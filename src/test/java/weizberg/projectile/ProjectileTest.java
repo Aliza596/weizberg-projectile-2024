@@ -62,7 +62,7 @@ public class ProjectileTest {
     }
 
     @Test
-    public void getInterceptX(){
+    public void getInterceptX() {
         //given
         Projectile projectile = new Projectile(31, 65);
 
