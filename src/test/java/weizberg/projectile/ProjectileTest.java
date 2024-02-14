@@ -70,7 +70,7 @@ public class ProjectileTest {
         double actual = projectile.getInterceptX();
 
         //then
-        assertEquals(862.24, actual, 0.01);
+        assertEquals(380.65, actual, 0.01);
     }
 
 

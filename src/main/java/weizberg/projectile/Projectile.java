@@ -40,8 +40,8 @@ public class Projectile {
 
 
     public double getInterceptX() {
-        tSeconds = -velocity / (-.5 * 9.8);
-        return 0 + velocity * tSeconds;
+        tSeconds = (2 * velocity * Math.sin(radians)) / 9.8;
+        return velocity * tSeconds * Math.cos(radians);
     }
 
 }
