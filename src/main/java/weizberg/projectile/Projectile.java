@@ -5,8 +5,7 @@ public class Projectile {
     private final double radians;
     private final double velocity;
     private double seconds;
-    private double initialX;
-    private double tSeconds;
+    private double t;
 
     public Projectile(double angle, double velocity) {
         this.angle = angle;
@@ -40,8 +39,8 @@ public class Projectile {
 
 
     public double getInterceptX() {
-        tSeconds = (2 * velocity * Math.sin(radians)) / 9.8;
-        return velocity * tSeconds * Math.cos(radians);
+        t = (2 * velocity * Math.sin(radians)) / 9.8;
+        return velocity * t * Math.cos(radians);
     }
 
 }
