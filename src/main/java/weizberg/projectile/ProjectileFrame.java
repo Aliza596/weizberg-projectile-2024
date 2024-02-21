@@ -85,7 +85,7 @@ public class ProjectileFrame extends JFrame {
                     peakYresults.setText(Double.toString(projectile.getPeakY()));
                     interceptXresults.setText(Double.toString(projectile.getInterceptX()));
                 } catch (NumberFormatException exception) {
-                    System.out.println(exception.getMessage());
+                    exception.printStackTrace();
                 }
             }
         });
@@ -102,7 +102,7 @@ public class ProjectileFrame extends JFrame {
                     peakYresults.setText(Double.toString(projectile.getPeakY()));
                     interceptXresults.setText(Double.toString(projectile.getInterceptX()));
                 } catch (NumberFormatException exception) {
-                    System.out.println(exception.getMessage());
+                    exception.printStackTrace();
                 }
             }
         });
@@ -120,7 +120,7 @@ public class ProjectileFrame extends JFrame {
                     peakYresults.setText(Double.toString(projectile.getPeakY()));
                     interceptXresults.setText(Double.toString(projectile.getInterceptX()));
                 } catch (NumberFormatException exception) {
-                    System.out.println(exception.getMessage());
+                    exception.printStackTrace();
                 }
             }
         });
