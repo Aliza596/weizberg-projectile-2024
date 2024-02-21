@@ -75,53 +75,20 @@ public class ProjectileFrame extends JFrame {
         angleSlider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-                try {
-                    Projectile projectile = new Projectile(angleSlider.getValue(),
-                            Double.parseDouble(velocityField.getText()));
-                    projectile.setSeconds(Double.parseDouble(secondsField.getText()));
-
-                    resultsLabelX.setText(Double.toString(projectile.getX()));
-                    resultsLabelY.setText(Double.toString(projectile.getY()));
-                    peakYresults.setText(Double.toString(projectile.getPeakY()));
-                    interceptXresults.setText(Double.toString(projectile.getInterceptX()));
-                } catch (NumberFormatException exception) {
-                    exception.printStackTrace();
-                }
+                updateInfo(angleSlider, velocityField, secondsField, resultsLabelX, resultsLabelY, peakYresults, interceptXresults);
             }
         });
 
         secondsField.getDocument().addDocumentListener(new SimpleDocumentListener() {
             public void update(DocumentEvent e) {
-                try {
-                    Projectile projectile = new Projectile(angleSlider.getValue(),
-                            Double.parseDouble(velocityField.getText()));
-                    projectile.setSeconds(Double.parseDouble(secondsField.getText()));
-
-                    resultsLabelX.setText(Double.toString(projectile.getX()));
-                    resultsLabelY.setText(Double.toString(projectile.getY()));
-                    peakYresults.setText(Double.toString(projectile.getPeakY()));
-                    interceptXresults.setText(Double.toString(projectile.getInterceptX()));
-                } catch (NumberFormatException exception) {
-                    exception.printStackTrace();
-                }
+                updateInfo(angleSlider, velocityField, secondsField, resultsLabelX, resultsLabelY, peakYresults, interceptXresults);
             }
         });
 
         velocityField.getDocument().addDocumentListener(new SimpleDocumentListener() {
             @Override
             public void update(DocumentEvent e) {
-                try {
-                    Projectile projectile = new Projectile(angleSlider.getValue(),
-                            Double.parseDouble(velocityField.getText()));
-                    projectile.setSeconds(Double.parseDouble(secondsField.getText()));
-
-                    resultsLabelX.setText(Double.toString(projectile.getX()));
-                    resultsLabelY.setText(Double.toString(projectile.getY()));
-                    peakYresults.setText(Double.toString(projectile.getPeakY()));
-                    interceptXresults.setText(Double.toString(projectile.getInterceptX()));
-                } catch (NumberFormatException exception) {
-                    exception.printStackTrace();
-                }
+                updateInfo(angleSlider, velocityField, secondsField, resultsLabelX, resultsLabelY, peakYresults, interceptXresults);
             }
         });
 
@@ -141,6 +108,21 @@ public class ProjectileFrame extends JFrame {
             }
         });
 
+    }
+
+    private static void updateInfo(JSlider angleSlider, JTextField velocityField, JTextField secondsField, JLabel resultsLabelX, JLabel resultsLabelY, JLabel peakYresults, JLabel interceptXresults) {
+        try {
+            Projectile projectile = new Projectile(angleSlider.getValue(),
+                    Double.parseDouble(velocityField.getText()));
+            projectile.setSeconds(Double.parseDouble(secondsField.getText()));
+
+            resultsLabelX.setText(Double.toString(projectile.getX()));
+            resultsLabelY.setText(Double.toString(projectile.getY()));
+            peakYresults.setText(Double.toString(projectile.getPeakY()));
+            interceptXresults.setText(Double.toString(projectile.getInterceptX()));
+        } catch (NumberFormatException exception) {
+            exception.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
