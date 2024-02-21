@@ -41,14 +41,14 @@ public class ProjectileFrame extends JFrame {
         JTextField secondsField = new JTextField();
         add(secondsField);
 
-        JLabel xLabel = new JLabel("X");
-        add(xLabel);
+        JLabel labelX = new JLabel("X");
+        add(labelX);
 
         JLabel resultsLabelX = new JLabel();
         add(resultsLabelX);
 
-        JLabel yLabel = new JLabel("Y");
-        add(yLabel);
+        JLabel labelY = new JLabel("Y");
+        add(labelY);
 
         JLabel resultsLabelY = new JLabel();
         add(resultsLabelY);
