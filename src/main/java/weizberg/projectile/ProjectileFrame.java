@@ -44,26 +44,26 @@ public class ProjectileFrame extends JFrame {
         JLabel xLabel = new JLabel("X");
         add(xLabel);
 
-        JLabel xResultsLabel = new JLabel();
-        add(xResultsLabel);
+        JLabel resultsLabelX = new JLabel();
+        add(resultsLabelX);
 
         JLabel yLabel = new JLabel("Y");
         add(yLabel);
 
-        JLabel yResultsLabel = new JLabel();
-        add(yResultsLabel);
+        JLabel resultsLabelY = new JLabel();
+        add(resultsLabelY);
 
-        JLabel peakYLabel = new JLabel("Peak Y");
-        add(peakYLabel);
+        JLabel peakYlabel = new JLabel("Peak Y");
+        add(peakYlabel);
 
-        JLabel peakYResults = new JLabel();
-        add(peakYResults);
+        JLabel peakYresults = new JLabel();
+        add(peakYresults);
 
-        JLabel xInterceptLabel = new JLabel("Intercept X");
-        add(xInterceptLabel);
+        JLabel interceptXlabel = new JLabel("Intercept X");
+        add(interceptXlabel);
 
-        JLabel xInterceptResults = new JLabel();
-        add(xInterceptResults);
+        JLabel interceptXresults = new JLabel();
+        add(interceptXresults);
 
         JLabel emptySpace = new JLabel();
         add(emptySpace);
@@ -80,10 +80,10 @@ public class ProjectileFrame extends JFrame {
                             Double.parseDouble(velocityField.getText()));
                     projectile.setSeconds(Double.parseDouble(secondsField.getText()));
 
-                    xResultsLabel.setText(Double.toString(projectile.getX()));
-                    yResultsLabel.setText(Double.toString(projectile.getY()));
-                    peakYResults.setText(Double.toString(projectile.getPeakY()));
-                    xInterceptResults.setText(Double.toString(projectile.getInterceptX()));
+                    resultsLabelX.setText(Double.toString(projectile.getX()));
+                    resultsLabelY.setText(Double.toString(projectile.getY()));
+                    peakYresults.setText(Double.toString(projectile.getPeakY()));
+                    interceptXresults.setText(Double.toString(projectile.getInterceptX()));
                 } catch (NumberFormatException exception) {
                     System.out.println(exception.getMessage());
                 }
@@ -97,10 +97,10 @@ public class ProjectileFrame extends JFrame {
                             Double.parseDouble(velocityField.getText()));
                     projectile.setSeconds(Double.parseDouble(secondsField.getText()));
 
-                    xResultsLabel.setText(Double.toString(projectile.getX()));
-                    yResultsLabel.setText(Double.toString(projectile.getY()));
-                    peakYResults.setText(Double.toString(projectile.getPeakY()));
-                    xInterceptResults.setText(Double.toString(projectile.getInterceptX()));
+                    resultsLabelX.setText(Double.toString(projectile.getX()));
+                    resultsLabelY.setText(Double.toString(projectile.getY()));
+                    peakYresults.setText(Double.toString(projectile.getPeakY()));
+                    interceptXresults.setText(Double.toString(projectile.getInterceptX()));
                 } catch (NumberFormatException exception) {
                     System.out.println(exception.getMessage());
                 }
@@ -115,10 +115,10 @@ public class ProjectileFrame extends JFrame {
                             Double.parseDouble(velocityField.getText()));
                     projectile.setSeconds(Double.parseDouble(secondsField.getText()));
 
-                    xResultsLabel.setText(Double.toString(projectile.getX()));
-                    yResultsLabel.setText(Double.toString(projectile.getY()));
-                    peakYResults.setText(Double.toString(projectile.getPeakY()));
-                    xInterceptResults.setText(Double.toString(projectile.getInterceptX()));
+                    resultsLabelX.setText(Double.toString(projectile.getX()));
+                    resultsLabelY.setText(Double.toString(projectile.getY()));
+                    peakYresults.setText(Double.toString(projectile.getPeakY()));
+                    interceptXresults.setText(Double.toString(projectile.getInterceptX()));
                 } catch (NumberFormatException exception) {
                     System.out.println(exception.getMessage());
                 }
@@ -134,10 +134,10 @@ public class ProjectileFrame extends JFrame {
                         Double.parseDouble(velocityField.getText()));
                 projectile.setSeconds(Double.parseDouble(secondsField.getText()));
 
-                xResultsLabel.setText(Double.toString(projectile.getX()));
-                yResultsLabel.setText(Double.toString(projectile.getY()));
-                peakYResults.setText(Double.toString(projectile.getPeakY()));
-                xInterceptResults.setText(Double.toString(projectile.getInterceptX()));
+                resultsLabelX.setText(Double.toString(projectile.getX()));
+                resultsLabelY.setText(Double.toString(projectile.getY()));
+                peakYresults.setText(Double.toString(projectile.getPeakY()));
+                interceptXresults.setText(Double.toString(projectile.getInterceptX()));
             }
         });
 
