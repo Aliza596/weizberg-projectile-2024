@@ -68,34 +68,15 @@ public class ProjectileFrame extends JFrame {
         add(calculateButton);
 
 
-        angleSlider.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                updateInfo();
-            }
-        });
+        angleSlider.addChangeListener(actionEvent -> updateInfo());
 
-        secondsField.getDocument().addDocumentListener(new SimpleDocumentListener() {
-            public void update(DocumentEvent e) {
-                updateInfo();
-            }
-        });
+        secondsField.getDocument().addDocumentListener((SimpleDocumentListener) actionEvent -> updateInfo());
 
-        velocityField.getDocument().addDocumentListener(new SimpleDocumentListener() {
-            @Override
-            public void update(DocumentEvent e) {
-                updateInfo();
-            }
-        });
+        velocityField.getDocument().addDocumentListener((SimpleDocumentListener) actionEvent -> updateInfo());
 
 
         //an action listener does something when the button is clicked
-        calculateButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               updateInfo();
-            }
-        });
+        calculateButton.addActionListener(actionEvent -> updateInfo());
 
     }
 
