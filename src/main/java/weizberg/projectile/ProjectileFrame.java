@@ -19,12 +19,13 @@ public class ProjectileFrame extends JFrame {
 
         setLayout(new GridLayout(8, 2));
         JLabel velocityLabel = new JLabel("Velocity");
+        add(velocityLabel);
+
+        JTextField velocityField = new JTextField();
+        add(velocityField);
+
         JLabel angleLabel = new JLabel("Angle");
-        JLabel secondsLabel = new JLabel("Seconds");
-        JLabel xLabel = new JLabel("X");
-        JLabel yLabel = new JLabel("Y");
-        JLabel peakYLabel = new JLabel("Peak Y");
-        JLabel xInterceptLabel = new JLabel("Intercept X");
+        add(angleLabel);
 
         JSlider angleSlider = new JSlider(0, 90, 45);
         angleSlider.setPaintLabels(true);
@@ -32,18 +33,43 @@ public class ProjectileFrame extends JFrame {
         angleSlider.setPaintTrack(true);
         angleSlider.setMinorTickSpacing(1);
         angleSlider.setMajorTickSpacing(10);
+        add(angleSlider);
 
-
-        JTextField velocityField = new JTextField();
+        JLabel secondsLabel = new JLabel("Seconds");
+        add(secondsLabel);
 
         JTextField secondsField = new JTextField();
+        add(secondsField);
+
+        JLabel xLabel = new JLabel("X");
+        add(xLabel);
+
         JLabel xResultsLabel = new JLabel();
+        add(xResultsLabel);
+
+        JLabel yLabel = new JLabel("Y");
+        add(yLabel);
+
         JLabel yResultsLabel = new JLabel();
+        add(yResultsLabel);
+
+        JLabel peakYLabel = new JLabel("Peak Y");
+        add(peakYLabel);
+
         JLabel peakYResults = new JLabel();
+        add(peakYResults);
+
+        JLabel xInterceptLabel = new JLabel("Intercept X");
+        add(xInterceptLabel);
+
         JLabel xInterceptResults = new JLabel();
+        add(xInterceptResults);
+
         JLabel emptySpace = new JLabel();
+        add(emptySpace);
 
         JButton calculateButton = new JButton("Calculate");
+        add(calculateButton);
 
 
         angleSlider.addChangeListener(new ChangeListener() {
@@ -99,34 +125,6 @@ public class ProjectileFrame extends JFrame {
             }
         });
 
-
-
-
-        //in order for the labels to appear on your screen you have to add them
-        add(velocityLabel);
-        add(velocityField);
-
-        add(angleLabel);
-        add(angleSlider);
-        //add(angleField);
-
-        add(secondsLabel);
-        add(secondsField);
-
-        add(xLabel);
-        add(xResultsLabel);
-
-        add(yLabel);
-        add(yResultsLabel);
-
-        add(peakYLabel);
-        add(peakYResults);
-
-        add(xInterceptLabel);
-        add(xInterceptResults);
-
-        add(emptySpace);
-        add(calculateButton);
 
         //an action listener does something when the button is clicked
         calculateButton.addActionListener(new ActionListener() {
