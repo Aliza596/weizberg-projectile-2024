@@ -10,6 +10,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ProjectileFrame extends JFrame {
+    JSlider angleSlider = new JSlider(0, 90, 45);
+    JTextField velocityField = new JTextField();
+    JTextField secondsField = new JTextField();
+    JLabel resultsLabelX = new JLabel();
+    JLabel resultsLabelY = new JLabel();
+    JLabel peakYresults = new JLabel();
+    JLabel interceptXresults = new JLabel();
+
 
     public ProjectileFrame() {
         setSize(400, 600); //this sets the size of the window
@@ -21,13 +29,11 @@ public class ProjectileFrame extends JFrame {
         JLabel velocityLabel = new JLabel("Velocity");
         add(velocityLabel);
 
-        JTextField velocityField = new JTextField();
         add(velocityField);
 
         JLabel angleLabel = new JLabel("Angle");
         add(angleLabel);
 
-        JSlider angleSlider = new JSlider(0, 90, 45);
         angleSlider.setPaintLabels(true);
         angleSlider.setPaintTicks(true);
         angleSlider.setPaintTrack(true);
@@ -37,32 +43,22 @@ public class ProjectileFrame extends JFrame {
 
         JLabel secondsLabel = new JLabel("Seconds");
         add(secondsLabel);
-
-        JTextField secondsField = new JTextField();
         add(secondsField);
 
         JLabel labelX = new JLabel("X");
         add(labelX);
-
-        JLabel resultsLabelX = new JLabel();
         add(resultsLabelX);
 
         JLabel labelY = new JLabel("Y");
         add(labelY);
-
-        JLabel resultsLabelY = new JLabel();
         add(resultsLabelY);
 
         JLabel peakYlabel = new JLabel("Peak Y");
         add(peakYlabel);
-
-        JLabel peakYresults = new JLabel();
         add(peakYresults);
 
         JLabel interceptXlabel = new JLabel("Intercept X");
         add(interceptXlabel);
-
-        JLabel interceptXresults = new JLabel();
         add(interceptXresults);
 
         JLabel emptySpace = new JLabel();
@@ -75,20 +71,20 @@ public class ProjectileFrame extends JFrame {
         angleSlider.addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
-                updateInfo(angleSlider, velocityField, secondsField, resultsLabelX, resultsLabelY, peakYresults, interceptXresults);
+                updateInfo();
             }
         });
 
         secondsField.getDocument().addDocumentListener(new SimpleDocumentListener() {
             public void update(DocumentEvent e) {
-                updateInfo(angleSlider, velocityField, secondsField, resultsLabelX, resultsLabelY, peakYresults, interceptXresults);
+                updateInfo();
             }
         });
 
         velocityField.getDocument().addDocumentListener(new SimpleDocumentListener() {
             @Override
             public void update(DocumentEvent e) {
-                updateInfo(angleSlider, velocityField, secondsField, resultsLabelX, resultsLabelY, peakYresults, interceptXresults);
+                updateInfo();
             }
         });
 
@@ -110,7 +106,7 @@ public class ProjectileFrame extends JFrame {
 
     }
 
-    private static void updateInfo(JSlider angleSlider, JTextField velocityField, JTextField secondsField, JLabel resultsLabelX, JLabel resultsLabelY, JLabel peakYresults, JLabel interceptXresults) {
+    private void updateInfo() {
         try {
             Projectile projectile = new Projectile(angleSlider.getValue(),
                     Double.parseDouble(velocityField.getText()));
