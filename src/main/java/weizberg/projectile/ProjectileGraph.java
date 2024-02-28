@@ -30,8 +30,7 @@ public class ProjectileGraph extends JComponent {
             currY = nextY;
         }
         g.setColor(Color.red);
-        g.fillOval((int) projectile.getInterceptX() / 2, (int) - projectile.getPeakY(), 10, 10);
-
+        g.fillOval((int) projectile.getInterceptX() / 2 - 5, (int) - projectile.getPeakY() - 5, 10, 10);
 
     }
 
