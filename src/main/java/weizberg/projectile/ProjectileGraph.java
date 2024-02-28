@@ -15,7 +15,7 @@ public class ProjectileGraph extends JComponent {
         //to move the origin to the middle of the screen then do getWidth/2 and getHeight/2
 
 
-        g.setColor(Color.RED);
+        g.setColor(Color.black);
         projectile.setSeconds(0);
         int currX = (int) projectile.getX();
         int currY = (int) projectile.getY();
@@ -25,19 +25,13 @@ public class ProjectileGraph extends JComponent {
             int nextX = (int) projectile.getX();
             int nextY = (int) projectile.getY();
             g.drawLine(currX, -currY, nextX, -nextY);
+
             currX = nextX;
             currY = nextY;
         }
-        g.setColor(Color.BLUE);
-        g.fillOval((int) projectile.getInterceptX() / 2, (int) -projectile.getPeakY(), 10, 10);
+        g.setColor(Color.red);
+        g.fillOval((int)projectile.getInterceptX() / 2, (int) - projectile.getPeakY(), 10, 10);
 
-        /*for(int i = 1; i < projectile.getApexTime() * 2; i++)
-        {
-            int x =  (int)projectile.getX();
-            int y = (int) projectile.getY();
-            projectile.setSeconds(i);
-            g.drawLine(x, -y, (int)projectile.getX(), (int) -projectile.getY());
-        }*/
 
     }
 
