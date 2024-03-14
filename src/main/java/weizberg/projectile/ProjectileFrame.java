@@ -10,8 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ProjectileFrame extends JFrame {
-    JSlider angleSlider = new JSlider(0, 90, 45);
-    JTextField velocityField = new JTextField();
+    JLabel blankLabel = new JLabel();
+    JLabel secondBlankLabel = new JLabel();
+    JSlider velocitySlider = new JSlider(0, 100, 65);
+    JLabel velocityValue = new JLabel();
+    JSlider angleSlider = new JSlider(0, 90, 31);
+    JLabel angleValue = new JLabel();
     JTextField secondsField = new JTextField();
     JLabel resultsLabelX = new JLabel();
     JLabel resultsLabelY = new JLabel();
@@ -34,11 +38,18 @@ public class ProjectileFrame extends JFrame {
         JPanel west = new JPanel();
         main.add(west, BorderLayout.WEST);
 
-        west.setLayout(new GridLayout(8, 2));
+        west.setLayout(new GridLayout(10, 2));
         JLabel velocityLabel = new JLabel("Velocity");
         west.add(velocityLabel);
 
-        west.add(velocityField);
+        velocitySlider.setPaintLabels(true);
+        velocitySlider.setPaintTicks(true);
+        velocitySlider.setPaintTicks(true);
+        west.add(velocitySlider);
+
+        west.add(blankLabel);
+        west.add(velocityValue);
+
 
         JLabel angleLabel = new JLabel("Angle");
         west.add(angleLabel);
@@ -46,9 +57,11 @@ public class ProjectileFrame extends JFrame {
         angleSlider.setPaintLabels(true);
         angleSlider.setPaintTicks(true);
         angleSlider.setPaintTrack(true);
-        angleSlider.setMinorTickSpacing(1);
-        angleSlider.setMajorTickSpacing(10);
         west.add(angleSlider);
+
+        west.add(secondBlankLabel);
+        west.add(angleValue);
+
 
         JLabel secondsLabel = new JLabel("Seconds");
         west.add(secondsLabel);
@@ -76,12 +89,26 @@ public class ProjectileFrame extends JFrame {
         JButton calculateButton = new JButton("Calculate");
         west.add(calculateButton);
 
+        velocitySlider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                velocityValue.setText(Integer.toString(velocitySlider.getValue()));
+                updateInfo(); // Update other info when velocity changes
+            }
+        });
+        angleSlider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                angleValue.setText(Integer.toString(angleSlider.getValue()));
+                updateInfo(); // Update other info when velocity changes
+            }
+        });
 
+/*
         angleSlider.addChangeListener(actionEvent -> updateInfo());
+*/
 
         secondsField.getDocument().addDocumentListener((SimpleDocumentListener) actionEvent -> updateInfo());
-
-        velocityField.getDocument().addDocumentListener((SimpleDocumentListener) actionEvent -> updateInfo());
 
 
         //an action listener does something when the button is clicked
@@ -94,7 +121,7 @@ public class ProjectileFrame extends JFrame {
     private void updateInfo() {
         try {
             Projectile projectile = new Projectile(angleSlider.getValue(),
-                    Double.parseDouble(velocityField.getText()));
+                    velocitySlider.getValue());
             projectile.setSeconds(Double.parseDouble(secondsField.getText()));
 
             resultsLabelX.setText(Double.toString(projectile.getX()));
