@@ -104,9 +104,6 @@ public class ProjectileFrame extends JFrame {
             }
         });
 
-/*
-        angleSlider.addChangeListener(actionEvent -> updateInfo());
-*/
 
         secondsField.getDocument().addDocumentListener((SimpleDocumentListener) actionEvent -> updateInfo());
 
