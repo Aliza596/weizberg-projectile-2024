@@ -8,8 +8,8 @@ import java.text.DecimalFormat;
 public class ProjectileGraph extends JComponent {
     private Projectile projectile = new Projectile(0, 0);
 
-
     private static final DecimalFormat FORMAT = new DecimalFormat("0.00");
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
